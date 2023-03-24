@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชื่อเว็บไซต์</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <!-- ส่วนของ Header -->
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <ul>
+                <li><a class="nav-link" href="/">Home</a></li>
+                <li><a class="nav-link" href="/about.html">About</a></li>
+                <li><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ส่วนของเนื้อหาหลัก Header -->
+    <main>
+        <section>
+            <h2>Section Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae malesuada massa. Etiam eu risus vel
+                augue placerat molestie vel vel ipsum. Integer pharetra, tortor sit amet malesuada pulvinar, purus
+                lectus tempor magna, at tristique eros justo quis quam. </p>
+        </section>
+
+        <section>
+            <h2>Section Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae malesuada massa. Etiam eu risus vel
+                augue placerat molestie vel vel ipsum. Integer pharetra, tortor sit amet malesuada pulvinar, purus
+                lectus tempor magna, at tristique eros justo quis quam. </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; My Website 2023</p>
+    </footer>
+
+    <script>
+        // เราเก็บ Element ที่ต้องการเข้าตัวแปร
+        const sectionTitles = document.querySelectorAll('section h2');
+        const navLinks = Array.from(document.getElementsByClassName("nav-link"));
+
+
+        /*
+            เราสามารถ
+            - ปรับแต่ง Style ได้จาก JS,
+            - จัดการ Event ได้จาก JS
+            - แก้ไข DOM ได้จาก JS,        
+        */
+        sectionTitles.forEach((title, index) => {
+            title.addEventListener('click', () => {
+                console.log(`Section ${index + 1} clicked!`);
+                console.log("Element that was clicked :", title)
+            }); 
+        });
+
+        navLinks.forEach((link, index) => {
+            if(index % 2) link.classList.add("even-link")
+            link.classList.add("link-class")
+        });
+    </script>
+
+</body>
+
+</html>
